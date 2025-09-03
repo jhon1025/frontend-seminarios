@@ -1,7 +1,7 @@
 (() => {
   const el = sel => document.querySelector(sel)
   const els = sel => Array.from(document.querySelectorAll(sel))
-  const state = { editingId: null, apiBase: localStorage.getItem('API_BASE') || '' }
+  const state = { editingId: null, apiBase: localStorage.getItem('https://backend-seminarios.onrender.com') || '' }
 
   const inputId = el('#id')
   const inputTitulo = el('#titulo')
