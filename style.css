@@ -1,0 +1,24 @@
+:root { --bg:#0f172a; --card:#111827; --muted:#94a3b8; --txt:#e5e7eb; --primary:#22c55e; --danger:#ef4444; --border:#1f2937; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; background: var(--bg); color: var(--txt); }
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+header h1 { margin: .2rem 0; }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--border); padding: 1rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.2); margin-bottom: 1rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 900px){ .grid-2 { grid-template-columns: 1fr; } }
+label { display: block; font-size: .9rem; margin: .6rem 0 .2rem; }
+input, select, textarea { width: 100%; padding: .7rem .8rem; border-radius: 12px; border: 1px solid var(--border); background: #0b1220; color: var(--txt); outline: none; }
+input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+.row { display: flex; gap: .5rem; align-items: center; }
+.row.between { justify-content: space-between; gap: 1rem; }
+button { background: var(--primary); color: #0b1220; border: none; padding: .7rem 1rem; border-radius: 12px; cursor: pointer; font-weight: 600; }
+button.secondary { background: transparent; color: var(--txt); border: 1px solid var(--border); }
+button.danger { background: var(--danger); color: #fff; }
+.list { display: grid; gap: .6rem; }
+.item { display:flex; justify-content: space-between; align-items: start; gap: .8rem; background: #0b1220; border: 1px solid var(--border); padding: .8rem; border-radius: 12px; }
+.item h3 { margin: 0 0 .2rem 0; font-size: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
+.chip { font-size: .75rem; background: #111827; border: 1px solid var(--border); color: var(--muted); padding: .2rem .5rem; border-radius: 999px; }
+.config-row { display:flex; gap:.5rem; }
+code { background:#0b1220; padding:.1rem .3rem; border-radius:6px; border:1px solid var(--border); }

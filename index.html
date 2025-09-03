@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Seminarios</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="container">
+    <h1>Gestión de Seminarios</h1>
+    <p class="muted">Frontend con HTML + CSS + JS (vanilla) — Backend en Render — MongoDB Atlas</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Configurar API</h2>
+      <div class="config-row">
+        <input id="apiBase" type="url" placeholder="https://tu-backend.onrender.com" />
+        <button id="saveApi">Guardar URL</button>
+      </div>
+      <p class="muted">La URL debe apuntar al backend desplegado (ej.: <code>https://seminarios-api.onrender.com</code>)</p>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h2>Crear / Editar Seminario</h2>
+        <form id="seminarioForm">
+          <input type="hidden" id="id" />
+          <label>Título
+            <input id="titulo" required minlength="3" maxlength="120" />
+          </label>
+          <label>Ponente
+            <input id="ponente" maxlength="120" />
+          </label>
+          <label>Fecha
+            <input id="fecha" type="date" required />
+          </label>
+          <label>Duración (minutos)
+            <input id="duracionMinutos" type="number" min="15" max="1440" value="60" />
+          </label>
+          <label>Capacidad
+            <input id="capacidad" type="number" min="1" max="10000" value="50" />
+          </label>
+          <label>Ubicación
+            <select id="ubicacion">
+              <option value="virtual">Virtual</option>
+              <option value="presencial">Presencial</option>
+              <option value="híbrido">Híbrido</option>
+            </select>
+          </label>
+          <label>Etiquetas (separadas por coma)
+            <input id="etiquetas" placeholder="web,Node,educación" />
+          </label>
+          <label>Descripción
+            <textarea id="descripcion" rows="4" maxlength="1000"></textarea>
+          </label>
+
+          <div class="row">
+            <button type="submit" id="btnGuardar">Guardar</button>
+            <button type="button" id="btnCancelar" class="secondary">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row between">
+          <h2>Seminarios</h2>
+          <input id="buscar" placeholder="Buscar por título o descripción..." />
+        </div>
+        <div id="lista" class="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container muted">
+    <p>Bootcamp Full Stack — Entidad: <strong>Seminarios</strong>. CRUD completo.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
